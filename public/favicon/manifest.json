@@ -1,21 +1,56 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Kiyori Portfolio",
+  "short_name": "Kiyori",
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
+      "src": "/favicon/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "any"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
-      "sizes": "512x512",
+      "src": "/favicon/favicon-16x16.png",
       "type": "image/png",
-      "purpose": "maskable"
+      "sizes": "16x16"
+    },
+    {
+      "src": "/favicon/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/favicon/favicon-48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/favicon/favicon-64x64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/favicon/favicon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/favicon/favicon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/favicon/favicon-256x256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/favicon/favicon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
 }
