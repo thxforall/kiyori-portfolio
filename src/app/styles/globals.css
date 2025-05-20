@@ -18,7 +18,8 @@
   }
 }
 
-html, body {
+html,
+body {
   width: 100%;
   min-width: 100vw;
   height: 100%;
@@ -46,13 +47,12 @@ html, body {
     @apply text-black hover:text-black/70 transition-colors duration-200
     dark:text-white dark:hover:text-white/70;
   }
-  
+
   .sound-toggle:hover {
     opacity: 1 !important;
   }
-  
+
   .sound-toggle:hover .sound-toggle_text {
     opacity: 1 !important;
-  } 
+  }
 }
-
