@@ -1,3 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: theme('colors.kiyori.background');
+    --text: theme('colors.kiyori.text');
+    --text-subtle: theme('colors.kiyori.subtle');
+  }
+
+  .dark {
+    --background: theme('colors.kiyori.dark.background');
+    --text: theme('colors.kiyori.dark.text');
+    --text-subtle: theme('colors.kiyori.dark.secondary');
+  }
+}
+
+html, body {
+  width: 100%;
+  min-width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-3 py-1.5 rounded-md border border-black/20 text-black hover:border-black/40 hover:text-black/80 transition-colors duration-200 text-sm
+    dark:border-white/20 dark:text-white dark:hover:border-white/40 dark:hover:text-white/80
+    bg-white/10 backdrop-blur-md;
+  }
+
+  .btn-secondary {
+    @apply px-3 py-1.5 rounded-md border border-black/20 text-black hover:border-black/40 hover:text-black/80 transition-colors duration-200 text-sm
+    dark:border-white/20 dark:text-white dark:hover:border-white/40 dark:hover:text-white/80
+    bg-white/10 backdrop-blur-md;
+  }
+
+  .link {
+    @apply text-black hover:text-black/70 transition-colors duration-200
+    dark:text-white dark:hover:text-white/70;
+  }
+  
+  .sound-toggle:hover {
+    opacity: 1 !important;
+  }
+  
+  .sound-toggle:hover .sound-toggle_text {
+    opacity: 1 !important;
+  } 
+}
+

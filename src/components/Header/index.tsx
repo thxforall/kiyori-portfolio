@@ -2,73 +2,35 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Logo from '@/components/Logo';
+import MenuButton from './menu';
+import SoundToggle from './sound';
+import ContactButton from './contact';
+import MobileMenu from './mobile-menu';
+import ThemeToggle from './theme';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSoundOn, setIsSoundOn] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white hover:text-gray-300 transition-colors"
-          >
-            Menu
-          </button>
-
-          {/* Logo */}
-          <Link href="/" className="text-white text-xl font-bold">
-            Portfolio
+    <header className="fixed top-0 left-0 right-0 z-50 w-full px-4 bg-transparent text-kiyori-text dark:text-kiyori-dark-text">
+      <div className="w-full flex items-center h-12 relative">
+        <div className="flex-1 flex justify-start gap-1">
+          <MenuButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+          <ThemeToggle />
+        </div>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <Link href="/">
+            <Logo />
           </Link>
-
-          {/* Right Section */}
-          <div className="flex items-center space-x-6">
-            {/* Sound Toggle */}
-            <button
-              onClick={() => setIsSoundOn(!isSoundOn)}
-              className="text-white hover:text-gray-300 transition-colors"
-            >
-              {isSoundOn ? 'Sound On' : 'Sound Off'}
-            </button>
-
-            {/* Contact Button */}
-            <Link
-              href="/contact"
-              className="text-white hover:text-gray-300 transition-colors"
-            >
-              Contact
-            </Link>
-          </div>
+        </div>
+        <div className="flex-1 flex justify-end items-center space-x-1">
+          <SoundToggle isSoundOn={isSoundOn} setIsSoundOn={setIsSoundOn} />
+          <ContactButton />
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-50">
-          <div className="h-full flex flex-col items-center justify-center">
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="absolute top-6 left-6 text-white"
-            >
-              Close
-            </button>
-            <nav className="flex flex-col items-center space-y-8">
-              <Link href="/" className="text-white text-2xl hover:text-gray-300">
-                Home
-              </Link>
-              <Link href="/about" className="text-white text-2xl hover:text-gray-300">
-                About
-              </Link>
-              <Link href="/projects" className="text-white text-2xl hover:text-gray-300">
-                Projects
-              </Link>
-            </nav>
-          </div>
-        </div>
-      )}
+      <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
     </header>
   );
-} 
+}
