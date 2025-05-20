@@ -1,7 +1,16 @@
+'use client';
+
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+const Hero = dynamic(() => import('@/app/components/sections/hero'), { ssr: false });
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-red-500 flex justify-center items-center">
-      <h1 className="text-4xl font-bold"></h1>
-    </div>
+    <main className="min-h-screen bg-black text-white">
+      <Suspense fallback={<div>Loading...</div>}>
+        <Hero />
+      </Suspense>
+    </main>
   );
 }
